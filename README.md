@@ -1,0 +1,1 @@
+This repository contains a Dockerfile that demonstrates a common error when building Docker images. The error occurs when the Dockerfile tries to run an application that does not exist in the image. This can be solved by adding a check to verify the existence of the file before execution.
