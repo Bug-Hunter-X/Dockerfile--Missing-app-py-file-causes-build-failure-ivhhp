@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y python3 python3-pip
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
+COPY app.py .
+# Check if the app.py file exists before running the command
+RUN if [ -f /app.py ]; then echo "app.py exists"; else echo "app.py does not exist"; exit 1; fi
+CMD ["python3", "/app.py"]
